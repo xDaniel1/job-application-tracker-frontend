@@ -33,12 +33,16 @@ function Home() {
   }, [])
 
   if (status === 'loading') {
-    return <p>Loading applications...</p>
+    return (
+      <div className="page-status">
+        <p>Loading applications...</p>
+      </div>
+    )
   }
 
   if (status === 'error') {
     return (
-      <div>
+      <div className="page-status">
         <p>{error}</p>
         <button type="button" onClick={() => window.location.reload()}>
           Retry
@@ -49,7 +53,7 @@ function Home() {
 
   if (applications.length === 0) {
     return (
-      <div>
+      <div className="page-status">
         <p>No applications yet.</p>
         <Link to="/applications/new">Add your first application</Link>
       </div>

@@ -1,3 +1,10 @@
+:root {
+  --text: #000;
+  --bg: #fff;
+  --border: #000;
+  --spacing: 16px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,19 +12,21 @@
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  color: #000;
-  background: #fff;
+  color: var(--text);
+  background: var(--bg);
 }
 
 a {
-  color: #000;
+  color: var(--text);
 }
 
 .navbar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  padding: 16px;
-  border-bottom: 1px solid #000;
+  gap: 8px 16px;
+  padding: var(--spacing);
+  border-bottom: 1px solid var(--border);
 }
 
 .navbar a {
@@ -26,17 +35,26 @@ a {
 }
 
 .footer {
-  padding: 16px;
+  padding: var(--spacing);
   text-align: center;
-  border-top: 1px solid #000;
+  border-top: 1px solid var(--border);
   margin-top: 32px;
+}
+
+.page-status {
+  padding: 32px var(--spacing);
+  text-align: center;
+}
+
+.page-status button {
+  margin-top: 12px;
 }
 
 .application-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
-  padding: 16px;
+  gap: var(--spacing);
+  padding: var(--spacing);
 }
 
 @media (min-width: 640px) {
@@ -47,11 +65,11 @@ a {
 
 .application-card {
   display: block;
-  border: 1px solid #000;
+  border: 1px solid var(--border);
   border-radius: 4px;
-  padding: 16px;
+  padding: var(--spacing);
   text-decoration: none;
-  color: #000;
+  color: var(--text);
 }
 
 .application-card .status {
@@ -62,7 +80,7 @@ a {
 .application-detail {
   max-width: 480px;
   margin: 40px auto;
-  padding: 24px;
+  padding: 24px var(--spacing);
   text-align: center;
 }
 
@@ -70,7 +88,7 @@ a {
   display: inline-block;
   font-weight: bold;
   text-transform: uppercase;
-  border: 1px solid #000;
+  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 4px 12px;
   margin: 12px 0 24px;
@@ -90,6 +108,7 @@ a {
 
 .application-detail dd {
   margin: 0;
+  word-break: break-word;
 }
 
 .application-detail .actions {
@@ -102,10 +121,10 @@ a {
 .application-detail .actions a,
 .application-detail .actions button {
   padding: 8px 16px;
-  border: 1px solid #000;
+  border: 1px solid var(--border);
   border-radius: 4px;
-  background: #fff;
-  color: #000;
+  background: var(--bg);
+  color: var(--text);
   text-decoration: none;
   font: inherit;
   cursor: pointer;
@@ -116,7 +135,8 @@ form {
   flex-direction: column;
   gap: 12px;
   max-width: 480px;
-  padding: 16px;
+  padding: var(--spacing);
+  margin: 0 auto;
 }
 
 label {
@@ -128,18 +148,24 @@ label {
 input,
 select,
 textarea {
+  width: 100%;
   padding: 8px;
-  border: 1px solid #000;
+  border: 1px solid var(--border);
   border-radius: 4px;
   font: inherit;
 }
 
+.error {
+  color: var(--text);
+  font-weight: bold;
+}
+
 button {
   padding: 8px 16px;
-  border: 1px solid #000;
+  border: 1px solid var(--border);
   border-radius: 4px;
-  background: #fff;
-  color: #000;
+  background: var(--bg);
+  color: var(--text);
   cursor: pointer;
 }
 
