@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer className="footer">
-      <p>Daniel Lantigua &mdash; Job Application Tracker</p>
+      <p>Daniel &mdash; Job Application Tracker</p>
     </footer>
   )
 }
