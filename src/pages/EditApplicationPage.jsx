@@ -76,11 +76,19 @@ function EditApplicationPage() {
   }
 
   if (status === 'loading') {
-    return <p>Loading application...</p>
+    return (
+      <div className="page-status">
+        <p>Loading application...</p>
+      </div>
+    )
   }
 
   if (status === 'error') {
-    return <p>{error}</p>
+    return (
+      <div className="page-status">
+        <p>{error}</p>
+      </div>
+    )
   }
 
   return (
